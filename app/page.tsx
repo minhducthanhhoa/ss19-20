@@ -1,5 +1,5 @@
 import { useUser, useAuth } from '@clerk/nextjs';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; // Update the import
 import React from 'react';
 
 const HomePage = () => {
@@ -9,7 +9,7 @@ const HomePage = () => {
 
   const handleSignOut = async () => {
     await signOut();
-    router.push('/sign-in'); // Chuyển hướng đến trang đăng nhập
+    router.push('/sign-in'); // Redirect to sign-in page
   };
 
   if (!isLoaded) {
